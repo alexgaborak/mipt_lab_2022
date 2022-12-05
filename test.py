@@ -4,7 +4,7 @@ import numpy as np #work with arrays and linear algebra
 import matplotlib.pyplot as plt #plot diagrams
 #Fitting function with its argument a and two parameters
 def fit_func(y, M, m):
-    return 2*pi*np.sqrt((17500*M + 12*m*np.square(y))/(100*9.8*(300*M + 12*m*y)))
+    return 2*pi*np.sqrt((M+np.square(y))/(100*9.8*(m+y)))
 
 
 # # Data
@@ -27,10 +27,10 @@ plt.ylim(1.4, 1.7) #limit on T axis
 #plot fitting function
 plt.plot(z, fit_func(z, params[0], params[1]))
 #print parameter values and their errors
-# print("T_min ="+ str(round(params[0], 3))+ "+-"+
-# str(round(np.sqrt(cov[0][0]), 3))+" s")
-# print("a_0 = "+str(round(params[1], 3))+"+-"+
-# str(round(np.sqrt(cov[1][1]), 3))+" cm")
+print("T_min ="+ str(round(params[0], 3))+ "+-"+
+str(round(np.sqrt(cov[0][0]), 3))+" s")
+print("a_0 = "+str(round(params[1], 3))+"+-"+
+str(round(np.sqrt(cov[1][1]), 3))+" cm")
 #show figure while running script interactively
 
 

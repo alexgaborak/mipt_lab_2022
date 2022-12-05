@@ -59,7 +59,7 @@ def fit_func(y, M, m):
 
 
 # # Data
-z = np.linspace(0, 70, 1000)
+z = np.linspace(0, 70, 10000)
 y = [9.005,	23.405,	27.505,	32.705,	39.805,	46.005,	54.005,	61.305,	66.105,	69.705]
 T = [1.4556, 1.4122, 1.4156, 1.4256, 1.4422, 1.4674,	1.5062,	1.553, 1.5816, 1.6]
 # Fitting procedure returning params values and covariation matrix.
