@@ -42,23 +42,24 @@ for i in values40:
 x = all40
 y = all20
 
-x_label = "$n$"
-y_label = "$\omega_n$"
-title = ""
+y_label = " $ n, \ 20 \ c $ "
+x_label = "$ \omega_n$"
+title=""
+# plt.figure(figsize=(8, 6), dpi=160)
 fig1, ax1 = plt.subplots()
-ax1.hist(y, bins = 28, density=True, color = "#7663b0", alpha = 0.75, label = "20s")
+ax1.hist(y, bins=28, density=True, orientation='horizontal', color="black", alpha=0.75, label="20s")
 ax1.set_ylabel(y_label)
 ax1.set_xlabel(x_label)
 ax1.set_title(title)
-ax1.legend(loc = 'upper left')
-plt.savefig('../pictures/20s.png', transparent=1)
-plt.show()
+ax1.legend(loc='upper right')
 
-fig2, ax2 = plt.subplots()
-ax2.hist(x, bins = 35, density=True, color = "#539caf", alpha = 1, label = "40s")
-# ax2.set_ylabel(y_label)
-# ax2.set_xlabel("", labelpad = 8.0)
+y_label = "$n, \ 40 \ c$"
+x_label = "$\omega_n$"
+ax2 = ax1.twinx()
+plt.hist(x, bins=35, density=True, orientation='horizontal', color="#539caf", alpha=0.5, label="40s")
+ax2.set_ylabel(y_label)
+ax2.set_xlabel(x_label)
 ax2.set_title(title)
-ax2.legend(loc = 'upper right')
-plt.savefig('../pictures/40s.png', transparent=1)
+ax2.legend(loc='lower right')
+plt.savefig('../pictures/histogram.png', dpi=300, transparent=1)
 plt.show()
